@@ -2,7 +2,8 @@
   "compilerOptions": {
     "typeRoots": [
       "node_modules/@types",
-      "src/types"
+      "src/types",
+      "node_modules/vite-plugin-pages/types"
     ],
     "target": "esnext",
     "useDefineForClassFields": true,
@@ -30,7 +31,7 @@
       ]
     },
     "types": [
-      "vite/client",
+      "vite/client"
     ]
   },
   "include": [
