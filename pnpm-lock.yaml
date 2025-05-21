@@ -21,8 +21,11 @@ dependencies:
     specifier: ^1.7.2
     version: 1.9.0
   element-plus:
-    specifier: ^2.7.5
+    specifier: ^2.9.10
     version: 2.9.10(vue@3.5.14)
+  locale:
+    specifier: link:element-plus/es/locale
+    version: link:element-plus/es/locale
   pinia:
     specifier: ^2.1.7
     version: 2.3.1(typescript@5.8.3)(vue@3.5.14)

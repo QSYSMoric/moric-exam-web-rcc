@@ -7,3 +7,26 @@ a:visited {
 :root {
     --link-color: #42b983;
 }
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit; /* 继承父元素的颜色 */
+    text-decoration: none; /* 去除下划线 */
+}
+
+a:hover {
+    color: inherit; /* 悬停时继承父元素的颜色 */
+    text-decoration: none; /* 悬停时去除下划线 */
+}
+
+a:focus {
+    outline: none; /* 去除默认的焦点边框 */
+}
