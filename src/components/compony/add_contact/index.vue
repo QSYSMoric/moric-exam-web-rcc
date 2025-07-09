@@ -30,18 +30,10 @@
             <el-col>
                 <el-space class="w-100% justify-between" alignment="start">
                     <el-space direction="vertical">
-                        <el-form-item
-                            label="手机"
-                            required
-                            v-for="(item, index) of form.phones"
-                        >
+                        <el-form-item label="手机" required v-for="(item, index) of form.phones">
                             <el-space>
                                 <el-input v-model="form.phones[index]" />
-                                <el-button
-                                    size="small"
-                                    type="danger"
-                                    @click="removePhone(index)"
-                                >
+                                <el-button size="small" type="danger" @click="removePhone(index)">
                                     删除
                                 </el-button>
                             </el-space>

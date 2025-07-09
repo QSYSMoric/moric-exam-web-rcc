@@ -3,34 +3,20 @@
         <el-row :gutter="16">
             <el-col :span="12">
                 <el-form-item label="安排时间" required>
-                    <el-date-picker
-                        v-model="form.time"
-                        type="date"
-                        placeholder="安排时间"
-                    />
+                    <el-date-picker v-model="form.time" type="date" placeholder="安排时间" />
                 </el-form-item>
             </el-col>
             <el-col :span="12">
                 <el-form-item label="跟进人">
                     <el-select v-model="form.user_id">
-                        <el-option
-                            v-for="item in users"
-                            :key="item.id"
-                            :label="item.name"
-                            :value="item.id"
-                        />
+                        <el-option v-for="item in users" :key="item.id" :label="item.name" :value="item.id" />
                     </el-select>
                 </el-form-item>
             </el-col>
             <el-col :span="12">
                 <el-form-item label="联系人">
                     <el-select v-model="form.contact_id">
-                        <el-option
-                            v-for="item in contact"
-                            :key="item.id"
-                            :label="item.name"
-                            :value="item.id"
-                        />
+                        <el-option v-for="item in contact" :key="item.id" :label="item.name" :value="item.id" />
                     </el-select>
                 </el-form-item>
             </el-col>
@@ -63,12 +49,7 @@
             </el-col>
             <el-col>
                 <el-form-item label="跟进状态">
-                    <el-checkbox
-                        v-model="form.state"
-                        :true-value="1"
-                        :false-value="0"
-                        label="已完成"
-                    />
+                    <el-checkbox v-model="form.state" :true-value="1" :false-value="0" label="已完成" />
                 </el-form-item>
             </el-col>
         </el-row>

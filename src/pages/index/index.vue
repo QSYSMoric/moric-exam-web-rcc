@@ -2,14 +2,9 @@
     <el-main class="h-100% rcc-commons">
         <el-card shadow="never" class="h-100%">
             <template #header> 公司列表 </template>
-            <section
-                class="h-100% grid grid-rows-[max-content_1fr_max-content] gap-12px"
-            >
+            <section class="h-100% grid grid-rows-[max-content_1fr_max-content] gap-12px">
                 <el-space>
-                    <el-button
-                        type="primary"
-                        @click="create_form_dialog = true"
-                    >
+                    <el-button type="primary" @click="create_form_dialog = true">
                         添加公司
                     </el-button>
                     <el-button @click="refresh"> 刷新 </el-button>
@@ -19,12 +14,10 @@
                         <template #header>
                             <el-input placeholder="公司名称" />
                         </template>
-                        <template
-                            #default="scope: {
-                                row: GetV1Company;
-                                $index: number;
-                            }"
-                        >
+                        <template #default="scope: {
+                            row: GetV1Company;
+                            $index: number;
+                        }">
                             <RouterLink :to="`/${scope.row.id}`">
                                 <el-text type="primary">
                                     {{ scope.row.name }}
@@ -32,22 +25,12 @@
                             </RouterLink>
                         </template>
                     </el-table-column>
-                    <el-table-column
-                        prop="follow_person.name"
-                        label="跟进人"
-                        width="180"
-                    />
-                    <el-table-column
-                        prop="created_at"
-                        label="创建时间"
-                        width="180"
-                    >
-                        <template
-                            #default="scope: {
-                                row: GetV1Company;
-                                $index: number;
-                            }"
-                        >
+                    <el-table-column prop="follow_person.name" label="跟进人" width="180" />
+                    <el-table-column prop="created_at" label="创建时间" width="180">
+                        <template #default="scope: {
+                            row: GetV1Company;
+                            $index: number;
+                        }">
                             <el-text>
                                 {{
                                     dayjs(scope.row.created_at).format(
@@ -57,61 +40,35 @@
                             </el-text>
                         </template>
                     </el-table-column>
-                    <el-table-column
-                        prop="phone"
-                        label="公司电话"
-                        width="120"
-                    />
-                    <el-table-column
-                        prop="post_code"
-                        label="公司邮编"
-                        width="90"
-                    />
+                    <el-table-column prop="phone" label="公司电话" width="120" />
+                    <el-table-column prop="post_code" label="公司邮编" width="90" />
                     <el-table-column prop="address" label="公司地址" />
                     <el-table-column align="center" width="160">
                         <template #header>
                             <el-text>操作</el-text>
                         </template>
-                        <template
-                            #default="scope: {
-                                row: GetV1Company;
-                                $index: number;
-                            }"
-                        >
-                            <el-button
-                                size="small"
-                                @click="set_form.set_data(scope.row.id)"
-                            >
+                        <template #default="scope: {
+                            row: GetV1Company;
+                            $index: number;
+                        }">
+                            <el-button size="small" @click="set_form.set_data(scope.row.id)">
                                 编辑
                             </el-button>
-                            <el-button
-                                size="small"
-                                type="danger"
-                                @click="paging.deleteCompany(scope.row.id)"
-                            >
+                            <el-button size="small" type="danger" @click="paging.deleteCompany(scope.row.id)">
                                 删除
                             </el-button>
                         </template>
                     </el-table-column>
                 </el-table>
-                <el-pagination
-                    v-model:current-page="paging.current_page"
-                    v-model:page-size="paging.per_page"
-                    :page-sizes="[1, 10, 20]"
-                    :total="paging.total_count"
-                    :background="true"
-                    layout="total, sizes, prev, pager, next, jumper"
-                    @size-change="paging.handleSizeChange"
-                    @current-change="paging.handleCurrentChange"
-                />
+                <el-pagination v-model:current-page="paging.current_page" v-model:page-size="paging.per_page"
+                    :page-sizes="[1, 10, 20]" :total="paging.total_count" :background="true"
+                    layout="total, sizes, prev, pager, next, jumper" @size-change="paging.handleSizeChange"
+                    @current-change="paging.handleCurrentChange" />
             </section>
         </el-card>
     </el-main>
     <el-dialog title="添加公司" v-model="create_form_dialog" width="600px">
-        <CreateCompony
-            v-model="create_form.data"
-            :users="users"
-        ></CreateCompony>
+        <CreateCompony v-model="create_form.data" :users="users"></CreateCompony>
         <template #footer>
             <el-button type="primary" @click="create_form.add_compony">
                 新增
